@@ -18,12 +18,160 @@
   font-display: swap;
 }
 
-    /* 브라우저 간 일관성을 위한 기본 설정 */
-    * {margin:0; padding:0; text-decoration: none; list-style: none; box-sizing: border-box;}
+/* 기본 설정 */
+* {margin:0; padding:0; text-decoration: none; list-style: none; box-sizing: border-box;}
     
-    html {
-      overflow-y: hidden; overflow-x: hidden;
-    }
+html {
+  overflow-y: hidden; overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
     
 
-    
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  overflow-y: hidden; overflow-x: hidden;
+  background: #fff;
+  background-size: cover;
+  -ms-overflow-style: none;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background: url(../images/main_bg.png) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0; /* 초기 상태: 투명 */
+  transition: opacity 1s ease; /* fade-in 효과 */
+  z-index: -1;
+}
+
+/* 배경 이미지가 나타날 때 */
+body.background-visible::before {
+  opacity: 1; /* 완전히 보이도록 */
+}
+
+
+/* section0 */
+.play-button-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-out;
+  z-index: 10;
+}
+.play-button-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.play-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.play-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -110%;
+  width: 5px;
+  height: 100px;
+  background: #bb8c5c;
+}
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 15px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+.explore-text {
+  font-family: 'Pretendard';
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  color: #000;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+#bgmPlayer {
+  display: block; /* 블록 요소 */
+  max-width: 100%; /* 화면 너비에 맞게 */
+  height: 0; /* 비율 유지 */
+}
+
+
+
+/* section1 */
+.section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  max-width: 1280px;
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+.section1.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+svg {
+  height: calc(var(--vh, 1vh) * 100); /* 화면 높이에 맞춤 */
+  max-width: 1280px;
+  max-height: calc(var(--vh, 1vh) * 100); /* 화면 높이를 초과하지 않도록 */
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  }
+
+svg.visible {
+  opacity: 1;
+}
+path {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: butt;
+}
+
+.main-line {
+  stroke: #bb8c5c;
+}
+
+.branch-line-left {
+  stroke: #005734;
+}
+
+.branch-line-right {
+  stroke: #bb8c5c;
+}
