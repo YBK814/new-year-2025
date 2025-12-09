@@ -1,0 +1,29 @@
+@import url(//fonts.googleapis.com/earlyaccess/kopubbatang.css);
+
+/* 모바일 브라우저의 100vh 문제 해결을 위한 CSS 변수 */
+:root {
+  --vh: 100%;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+    /* 브라우저 간 일관성을 위한 기본 설정 */
+    * {margin:0; padding:0; text-decoration: none; list-style: none; box-sizing: border-box;}
+    
+    html {
+      overflow-y: hidden; overflow-x: hidden;
+    }
+    
+
+    
