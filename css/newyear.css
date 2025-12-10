@@ -283,3 +283,57 @@ path {
   left: 7%;
   bottom: 5%;
 }
+
+.branch-img-container-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0; /* 초기 상태: 숨김 */
+  transition: opacity 0.5s ease-in; /* 페이드 인 transition */
+}
+
+.branch-img-container-2.visible {
+  opacity: 1; /* 나타날 때 */
+}
+.branch-img2 img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+}
+
+.branch-img2 {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  text-align: center;
+  white-space: nowrap;
+}
+.branch-img-ball-one {
+  left: 11%;
+  top: 14%;
+}
+.branch-img-ball-two {
+  right: 15%;
+  top: 15%;
+}
+.branch-img-ball-three {
+  right: 30%;
+  top: 38%;
+}
+.branch-img-ball-four {
+  left: 20%;
+  top: 73%;
+}
+.branch-img-ball-five {
+  left: 40%;
+  top: 56%;
+}
+.branch-img-ball-six {
+  right: 37%;
+  top: 84%;
+}
+
+.branch-img2.visible {
+  opacity: 1;
+}
