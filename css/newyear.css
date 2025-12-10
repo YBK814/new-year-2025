@@ -175,3 +175,111 @@ path {
 .branch-line-right {
   stroke: #bb8c5c;
 }
+
+.branch-text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* 페이드 아웃을 위한 transition 추가 */
+}
+.branch-text-container.fade-out {
+  opacity: 0; /* 페이드 아웃 클래스 */
+}
+
+.branch-text {
+  position: absolute;
+  font-family: 'Pretendard';
+  font-size: 34px;
+  font-weight: 400;
+  color: #005734;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  text-align: center;
+  white-space: nowrap;
+}
+.branch-text em {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.branch-text.visible {
+  opacity: 1;
+}
+.branch-text-the {
+  left: 10%;
+  top: 6%;
+}
+.branch-text-light-and-salt {
+  left: 24%;
+  top: 34%;
+}
+.branch-text-of {
+  right: 20%;
+  top: 50%;
+  color: #bb8c5c;
+}
+.branch-text-the-world {
+  left: 30%;
+  bottom: 27%;
+}
+.branch-logo {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.branch-logo.visible {
+  opacity: 1;
+}
+
+.branch-logo-duranno {
+  right: 15%;
+  bottom: 20%;
+}
+
+.branch-logo img {
+  max-width: 170px;
+  height: auto;
+  display: block;
+}
+
+.branch-img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.branch-img {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  text-align: center;
+  white-space: nowrap;
+}
+.branch-img.visible {
+  opacity: 1;
+}
+.branch-img img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+}
+.branch-img-light-one {
+  left: 20%;
+  top: 28%;
+}
+.branch-img-light-two {
+  right: 7%;
+  top: 0;
+}
+.branch-img-light-three {
+  right: 20%;
+  bottom: 25%;
+}
+.branch-img-light-four {
+  left: 7%;
+  bottom: 5%;
+}
